@@ -746,8 +746,13 @@
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
+              "crossingFlows": [
+                "8b0c97de-510f-4d65-9961-ae9b352b2abc",
+                "18eaf04e-cd52-435d-9e77-741a9306db38"
+              ],
+              "containedElements": [
+                "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2"
+              ]
             },
             "labels": [
               "AW Gateway"
@@ -780,8 +785,12 @@
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
+              "crossingFlows": [
+                "18eaf04e-cd52-435d-9e77-741a9306db38"
+              ],
+              "containedElements": [
+                "162d6ed3-0602-42a9-8ab8-bad940ada188"
+              ]
             },
             "labels": [
               "CAXperts UDiTH"
@@ -885,7 +894,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
+              ]
             },
             "labels": [
               "signin popup"
@@ -941,7 +952,10 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090",
+                "962ede3f-9dbb-457a-801a-93c5a209c025"
+              ]
             },
             "labels": [
               "authorize and get access tokens"
@@ -1038,17 +1052,7 @@
                 "x": 900,
                 "y": 170
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "shape": "flow",
