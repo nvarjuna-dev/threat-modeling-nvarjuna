@@ -496,8 +496,8 @@
           },
           {
             "position": {
-              "x": 690,
-              "y": 190
+              "x": 700,
+              "y": 220
             },
             "size": {
               "width": 120,
@@ -972,7 +972,83 @@
                 "x": 570,
                 "y": 140
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "start model rendering",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "start model rendering"
+            ],
+            "id": "150af874-4ee6-4fff-abfd-31ea5337fb33",
+            "source": {
+              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "d16e8700-787b-4400-8972-782a18de524c",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "vertices": [
+              {
+                "x": 900,
+                "y": 240
+              },
+              {
+                "x": 900,
+                "y": 170
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "flow",
@@ -1027,74 +1103,12 @@
               {
                 "x": 470,
                 "y": 390
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "start model rendering",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "start model rendering"
-            ],
-            "id": "150af874-4ee6-4fff-abfd-31ea5337fb33",
-            "source": {
-              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "target": {
-              "cell": "d16e8700-787b-4400-8972-782a18de524c",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "vertices": [
-              {
-                "x": 850,
-                "y": 220
               },
               {
-                "x": 900,
-                "y": 170
+                "x": 620,
+                "y": 300
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
