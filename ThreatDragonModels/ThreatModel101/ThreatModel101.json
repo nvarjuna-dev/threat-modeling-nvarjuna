@@ -19,8 +19,8 @@
         "cells": [
           {
             "position": {
-              "x": 130,
-              "y": 50
+              "x": -15,
+              "y": 60
             },
             "size": {
               "width": 90,
@@ -136,8 +136,8 @@
           },
           {
             "position": {
-              "x": 120,
-              "y": 330
+              "x": 70,
+              "y": 350
             },
             "size": {
               "width": 170,
@@ -256,11 +256,11 @@
           },
           {
             "position": {
-              "x": 220,
-              "y": 330
+              "x": 75,
+              "y": 250
             },
             "size": {
-              "width": 170,
+              "width": 160,
               "height": 100
             },
             "attrs": {
@@ -372,19 +372,12 @@
               "privilegeLevel": "",
               "threats": []
             },
-            "zIndex": 2,
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
-            }
+            "zIndex": 2
           },
           {
             "position": {
-              "x": 580,
-              "y": 65
+              "x": 520,
+              "y": 50
             },
             "size": {
               "width": 170,
@@ -810,6 +803,166 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Open embedded viewer",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Open embedded viewer"
+            ],
+            "id": "771d2ec8-d097-45c0-998a-2fb275cc789e",
+            "source": {
+              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
+              "port": "1e03eeb1-f779-4e72-8ccb-fc63b7c86dfd"
+            },
+            "target": {
+              "cell": "aa874d0b-4298-4f51-9ad7-e00043926cb3",
+              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
+            },
+            "vertices": [
+              {
+                "x": 40,
+                "y": 160
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Signin Popup",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Signin Popup"
+            ],
+            "id": "8b0c97de-510f-4d65-9961-ae9b352b2abc",
+            "source": {
+              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
+              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
+            },
+            "target": {
+              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
+              "port": "f911f074-b519-4486-9253-80682dd7d4fc"
+            },
+            "vertices": [
+              {
+                "x": 165,
+                "y": 130
+              },
+              {
+                "x": 120,
+                "y": 85
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "authorize and get access tokens",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "authorize and get access tokens"
+            ],
+            "id": "18eaf04e-cd52-435d-9e77-741a9306db38",
+            "source": {
+              "cell": "aa874d0b-4298-4f51-9ad7-e00043926cb3",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "162d6ed3-0602-42a9-8ab8-bad940ada188",
+              "port": "4231b301-1841-4fee-817b-a79246204409"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 280
+              }
+            ]
+          },
+          {
             "position": {
               "x": 279,
               "y": 100
@@ -835,8 +988,8 @@
           },
           {
             "position": {
-              "x": 10,
-              "y": 240
+              "x": -50,
+              "y": 270
             },
             "size": {
               "width": 220,
@@ -951,7 +1104,14 @@
               "privilegeLevel": "",
               "threats": []
             },
-            "zIndex": 12
+            "zIndex": 12,
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
           }
         ]
       }
