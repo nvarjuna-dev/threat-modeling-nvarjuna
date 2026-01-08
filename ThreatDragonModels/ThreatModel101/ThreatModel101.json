@@ -42,8 +42,8 @@
           },
           {
             "position": {
-              "x": 60,
-              "y": 130
+              "x": 30,
+              "y": 150
             },
             "size": {
               "width": 90,
@@ -155,12 +155,19 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
             "position": {
-              "x": 250,
-              "y": 85
+              "x": 240,
+              "y": 65
             },
             "size": {
               "width": 170,
@@ -279,8 +286,8 @@
           },
           {
             "position": {
-              "x": 250,
-              "y": 205
+              "x": 230,
+              "y": 200
             },
             "size": {
               "width": 170,
@@ -793,17 +800,41 @@
                 "x": 170,
                 "y": 240
               }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "AW Gateway",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            },
+            "labels": [
+              "AW Gateway"
             ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            "id": "30a40392-27a3-4b19-913a-d07efc3a4567",
+            "source": {
+              "x": 540,
+              "y": 40
+            },
+            "target": {
+              "x": 530,
+              "y": 310
+            },
+            "vertices": [
+              {
+                "x": 470,
+                "y": 170
+              }
+            ]
           }
         ]
       }
