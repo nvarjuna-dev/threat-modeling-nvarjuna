@@ -19,31 +19,8 @@
         "cells": [
           {
             "position": {
-              "x": 750,
+              "x": 130,
               "y": 50
-            },
-            "size": {
-              "width": 560,
-              "height": 330
-            },
-            "visible": true,
-            "shape": "trust-boundary-box",
-            "id": "6d082e45-5859-46f6-be64-6c0b209d3819",
-            "zIndex": -1,
-            "data": {
-              "type": "tm.BoundaryBox",
-              "name": "Trust Boundary",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
-            }
-          },
-          {
-            "position": {
-              "x": 29.999999999999844,
-              "y": 165.00000000000006
             },
             "size": {
               "width": 90,
@@ -159,8 +136,8 @@
           },
           {
             "position": {
-              "x": 240,
-              "y": 65
+              "x": 120,
+              "y": 330
             },
             "size": {
               "width": 170,
@@ -280,7 +257,7 @@
           {
             "position": {
               "x": 250,
-              "y": 205
+              "y": 330
             },
             "size": {
               "width": 170,
@@ -399,8 +376,8 @@
           },
           {
             "position": {
-              "x": 790,
-              "y": 85
+              "x": 580,
+              "y": 65
             },
             "size": {
               "width": 170,
@@ -519,8 +496,8 @@
           },
           {
             "position": {
-              "x": 930,
-              "y": 165
+              "x": 690,
+              "y": 180
             },
             "size": {
               "width": 170,
@@ -639,8 +616,8 @@
           },
           {
             "position": {
-              "x": 1100,
-              "y": 265
+              "x": 740,
+              "y": 50
             },
             "size": {
               "width": 170,
@@ -775,23 +752,19 @@
             "labels": [
               "AW Gateway"
             ],
-            "id": "dc1d3347-ff86-40ac-b90a-97bfa85b1006",
+            "id": "3ed569ea-2620-4ca5-84d7-7f6888ab3090",
             "source": {
-              "x": 140,
-              "y": 40
+              "x": 15,
+              "y": 244
             },
             "target": {
-              "x": 120,
-              "y": 300
+              "x": 510,
+              "y": 450
             },
             "vertices": [
               {
-                "x": 190,
-                "y": 160
-              },
-              {
-                "x": 170,
-                "y": 240
+                "x": 280,
+                "y": 200
               }
             ]
           },
@@ -803,7 +776,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "AW Gateway",
+              "name": "CAXperts UDiTH",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -811,75 +784,54 @@
               "containedElements": []
             },
             "labels": [
-              "AW Gateway"
+              "CAXperts UDiTH"
             ],
-            "id": "30a40392-27a3-4b19-913a-d07efc3a4567",
+            "id": "962ede3f-9dbb-457a-801a-93c5a209c025",
             "source": {
-              "x": 540,
-              "y": 40
+              "x": 580,
+              "y": 20
             },
             "target": {
-              "x": 530,
-              "y": 310
+              "x": 720,
+              "y": 430
             },
             "vertices": [
               {
-                "x": 470,
+                "x": 530,
                 "y": 170
               }
             ]
           },
           {
-            "shape": "flow",
+            "position": {
+              "x": 279,
+              "y": 100
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
             "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
+              "text": {
+                "text": "Internet"
               }
             },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "56f50676-0f8e-4493-ac46-56afea21fad1",
+            "zIndex": 11,
             "data": {
-              "type": "tm.Flow",
-              "name": "Opens Embeded UDiTH Viewer",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "type": "tm.Text",
+              "name": "Internet",
+              "hasOpenThreats": false
             },
-            "labels": [
-              "Opens Embeded UDiTH Viewer"
-            ],
-            "id": "367bcf88-df0d-4e24-bcce-370d975daa5f",
-            "source": {
-              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
-              "port": "1e03eeb1-f779-4e72-8ccb-fc63b7c86dfd"
-            },
-            "target": {
-              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
-              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
-            },
-            "vertices": [
-              {
-                "x": 180,
-                "y": 255
-              }
-            ]
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
           }
         ]
       }
