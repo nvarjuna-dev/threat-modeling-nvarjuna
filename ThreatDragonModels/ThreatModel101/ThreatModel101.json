@@ -42,8 +42,8 @@
           },
           {
             "position": {
-              "x": 30,
-              "y": 150
+              "x": 29.999999999999844,
+              "y": 165.00000000000006
             },
             "size": {
               "width": 90,
@@ -155,13 +155,6 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -286,8 +279,8 @@
           },
           {
             "position": {
-              "x": 230,
-              "y": 200
+              "x": 250,
+              "y": 205
             },
             "size": {
               "width": 170,
@@ -833,6 +826,58 @@
               {
                 "x": 470,
                 "y": 170
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Opens Embeded UDiTH Viewer",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Opens Embeded UDiTH Viewer"
+            ],
+            "id": "367bcf88-df0d-4e24-bcce-370d975daa5f",
+            "source": {
+              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
+              "port": "1e03eeb1-f779-4e72-8ccb-fc63b7c86dfd"
+            },
+            "target": {
+              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
+              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
+            },
+            "vertices": [
+              {
+                "x": 180,
+                "y": 255
               }
             ]
           }
