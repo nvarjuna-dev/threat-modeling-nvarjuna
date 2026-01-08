@@ -496,12 +496,12 @@
           },
           {
             "position": {
-              "x": 700,
-              "y": 170
+              "x": 690,
+              "y": 190
             },
             "size": {
-              "width": 100,
-              "height": 100
+              "width": 120,
+              "height": 110
             },
             "attrs": {
               "text": {
@@ -616,11 +616,11 @@
           },
           {
             "position": {
-              "x": 740,
-              "y": 50
+              "x": 750,
+              "y": 70
             },
             "size": {
-              "width": 170,
+              "width": 100,
               "height": 100
             },
             "attrs": {
@@ -822,7 +822,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Open embedded viewer",
+              "name": "open embedded viewer",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -836,7 +836,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Open embedded viewer"
+              "open embedded viewer"
             ],
             "id": "771d2ec8-d097-45c0-998a-2fb275cc789e",
             "source": {
@@ -874,7 +874,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Signin Popup",
+              "name": "signin popup",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -888,7 +888,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Signin Popup"
+              "signin popup"
             ],
             "id": "8b0c97de-510f-4d65-9961-ae9b352b2abc",
             "source": {
@@ -994,7 +994,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Connect to streaming model",
+              "name": "connect to streaming model",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1008,7 +1008,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Connect to streaming model"
+              "connect to streaming model"
             ],
             "id": "de84224b-d269-418c-8012-06f6fa3fb28b",
             "source": {
@@ -1021,12 +1021,68 @@
             },
             "vertices": [
               {
-                "x": 360,
-                "y": 410
+                "x": 350,
+                "y": 430
               },
               {
-                "x": 480,
-                "y": 370
+                "x": 470,
+                "y": 390
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "start model rendering",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "start model rendering"
+            ],
+            "id": "150af874-4ee6-4fff-abfd-31ea5337fb33",
+            "source": {
+              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "d16e8700-787b-4400-8972-782a18de524c",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "vertices": [
+              {
+                "x": 850,
+                "y": 220
+              },
+              {
+                "x": 900,
+                "y": 170
               }
             ],
             "tools": {
