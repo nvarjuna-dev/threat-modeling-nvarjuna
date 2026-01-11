@@ -131,7 +131,21 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "7e5381f3-083b-4655-9b4c-7aadc3228eef",
+                  "title": "Access token theft",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Access token stored in browser can be impersonated by attacker and  stolen\n",
+                  "mitigation": "1.  Key cloak providing Short lived tokens\n2.  Enforcing CSP on AW Gateway\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -491,7 +505,21 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "66c357ea-866b-4acd-b474-645a2b8f8685",
+                  "title": "Redirect URI Misconfiguration",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Redirect URI misconfiguration (wildcards). A redirect URI can be misconfigured and attacker can spoof the redirect URL therby steal the access tokens",
+                  "mitigation": "1. Only matching URLs will be redirected from Keycloak. Strict URL is enforced at Keycloak (No wildcard to be allowed)\n2. HTTPS is enforced at the Keycloak.\n3. PKCE and State validation is enforced using OIDC client at Active workspace.",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -611,7 +639,28 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "7723d955-d3d1-407d-a7cc-4b2ff994acaa",
+                  "title": "Broken backend token validation",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "CAXperts UDiTH trusting invalid tokens without validations\n",
+                  "mitigation": "1. Use JWT signature verification using keycloak JWKS\n2. Reject expired token using OidcManager.removeUser() on expire event\n3. Using 'Issue Identifier' (iss) ensure token from valid keycloak realm\n4. CAXperts token aud: \"signaling\". Ensuring token is valid only for connecting to signalling service.\nEnfore least privillage in scope",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -883,73 +932,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "authorize and get access tokens",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "https",
-              "threats": [],
-              "trustBoundaryIds": [
-                "3ed569ea-2620-4ca5-84d7-7f6888ab3090",
-                "962ede3f-9dbb-457a-801a-93c5a209c025"
-              ]
-            },
-            "labels": [
-              "authorize and get access tokens"
-            ],
-            "id": "18eaf04e-cd52-435d-9e77-741a9306db38",
-            "source": {
-              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "target": {
-              "cell": "162d6ed3-0602-42a9-8ab8-bad940ada188",
-              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
-            },
-            "vertices": [
-              {
-                "x": 320,
-                "y": 330
-              },
-              {
-                "x": 430,
-                "y": 310
-              },
-              {
-                "x": 480,
-                "y": 230
-              },
-              {
-                "x": 570,
-                "y": 140
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "start model rendering",
               "description": "",
               "outOfScope": false,
@@ -1059,6 +1041,87 @@
                   "name": "block"
                 },
                 "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "authorize and get access tokens",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "https",
+              "threats": [
+                {
+                  "id": "7f8d79a8-7385-4cc8-a0dd-1f003d6d5c19",
+                  "title": "Authorization code interception",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The attack happens when an attacker manages to capture the authorization code in transit\n\ta. Man-in-the-Middle  attack\n\tb. Open redirect / wildcard redirect URIs\n        c. XSS / malicious script in SPA",
+                  "mitigation": "1. Enabled PKCE using response_type=code \n2. Enable State\n3. Enfore HTTPS and valid redirect URLs only\n",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090",
+                "962ede3f-9dbb-457a-801a-93c5a209c025"
+              ]
+            },
+            "labels": [
+              "authorize and get access tokens"
+            ],
+            "id": "18eaf04e-cd52-435d-9e77-741a9306db38",
+            "source": {
+              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "162d6ed3-0602-42a9-8ab8-bad940ada188",
+              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 330
+              },
+              {
+                "x": 430,
+                "y": 310
+              },
+              {
+                "x": 480,
+                "y": 230
+              },
+              {
+                "x": 570,
+                "y": 140
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
                   "name": ""
                 },
                 "strokeDasharray": null
@@ -1085,13 +1148,26 @@
                   "id": "305a6de7-88df-4702-8782-d923ee78af31",
                   "title": "Tampering Popup Window",
                   "status": "Mitigated",
-                  "severity": "Medium",
+                  "severity": "High",
                   "type": "Tampering",
                   "description": "Tampering Popup Window to capture OIDC request parameters such as redirect_uri, client_id or scope.",
-                  "mitigation": "1. CSP entries are added at the Active workspace Gateway allowing only valid Keycloak redirections.\n2. ",
+                  "mitigation": "1. CSP entries are added at the Active workspace Gateway allowing only valid Keycloak redirections.\n2. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n3. Teamcenter and Authorization server (keycloak) are served in https://",
                   "modelType": "default",
                   "new": false,
                   "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "0c0a3242-de5c-4b7b-ac24-d8bac40c06d0",
+                  "title": "XSS enabling auth flow manipulation",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attacker can execute cross-side scripting to intercept authorization and steal tokens\n",
+                  "mitigation": "Adding CSP rules at AW Gateway to allow only CAXperts and Keycloak connections ",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 5,
                   "score": ""
                 }
               ],
@@ -1275,6 +1351,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 2
+    "threatTop": 7
   }
 }
