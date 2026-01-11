@@ -265,7 +265,21 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": true,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "a98474d5-038b-4fa6-88a4-213664d50702",
+                  "title": "Mailicious 3rd Party application gain access to CAXperts NPM package",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "A malicious third-party application embeds the @caxperts NPM package and uses it to appear as the legitimate viewer in Active Workspace.",
+                  "mitigation": "1.  Conduct supply chain security audits of third-party libraries like @caxperts.\n2. Implementing CSP policies at AW Gateway\n3. Using OIDC client which enables PKCE and State validation",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -282,8 +296,8 @@
                 "text": "OIDC-client-ts \nNPM Package"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -380,12 +394,39 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": true,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "bc214f9d-777e-430f-b878-846d08938bba",
+                  "title": "Attacker exploits OIDC scope privillages",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "An attacker exploits misconfigured or insufficient OIDC client configurations to escalate permissions (e.g., scope manipulation).",
+                  "mitigation": "1. Make sure OIDC client configurations are setup from Deployment Center and stored securely.\n2. Implement principle of least privillage at the OIDC scope parameter\n---- TBD 3. CAXperts to provide Authorization policies based on Roles ----",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                },
+                {
+                  "id": "e0be6327-2d8c-47d1-b658-41c25aea3b85",
+                  "title": "Over-privileged roles in tokens",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Access token containing more then nessesary privillage pose a bigger threat when something fails. Intruder could gain high level access to backend system and compromise the APIs",
+                  "mitigation": "1. Enfore least privillage during token grant, using minimal SCOPE\n2. Issue different tokens per client\n3. Use short lived tokens",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -402,8 +443,8 @@
                 "text": "Keycloak"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -500,7 +541,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -517,6 +558,19 @@
                   "modelType": "default",
                   "new": false,
                   "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "509bf607-bb4f-4760-9113-d0d6e26f9cbe",
+                  "title": "DDoS Attack on Keycloak services",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "A malicious actor performs a Distributed Denial of Service (DDoS) attack against the partner’s Keycloak server or signaling server, disrupting authentication and communication.",
+                  "mitigation": "1. Using DDoS protection services like (AWS Sheild or Cloudfare)\n2. Use auto-scaling feature\n3. Regularly test against simulated DDoS scenarios to assess resilience measures.",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 11,
                   "score": ""
                 }
               ]
@@ -654,13 +708,6 @@
                   "score": ""
                 }
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -677,8 +724,8 @@
                 "text": "Render \nServices"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -775,12 +822,26 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "86dbd57f-97b8-426d-bd24-b3a289a3f934",
+                  "title": "DDoS attack on Render services",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "An attacker exploits a vulnerability in the @caxperts NPM package or WebRTC implementation to flood the servers with bogus connection requests.",
+                  "mitigation": "1. Deploy application-layer protection using Web Application Firewalls (WAFs).\n2. Regularly patch the @caxperts NPM package and WebRTC implementations with the latest security updates.\n3. Implement anomaly detection algorithms to detect and block suspicious connection patterns.\n4. Rate-limit incoming connection requests per user/session.",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -909,126 +970,6 @@
               {
                 "x": 40,
                 "y": 160
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "start model rendering",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "wss",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "start model rendering"
-            ],
-            "id": "150af874-4ee6-4fff-abfd-31ea5337fb33",
-            "source": {
-              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "target": {
-              "cell": "d16e8700-787b-4400-8972-782a18de524c",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "vertices": [
-              {
-                "x": 900,
-                "y": 240
-              },
-              {
-                "x": 900,
-                "y": 170
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "connect to streaming model",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "wss",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "connect to streaming model"
-            ],
-            "id": "de84224b-d269-418c-8012-06f6fa3fb28b",
-            "source": {
-              "cell": "4b777692-1bcc-4025-94a6-b85b52e9d978",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "target": {
-              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
-              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
-            },
-            "vertices": [
-              {
-                "x": 350,
-                "y": 430
-              },
-              {
-                "x": 430,
-                "y": 400
-              },
-              {
-                "x": 470,
-                "y": 390
-              },
-              {
-                "x": 620,
-                "y": 300
               }
             ]
           },
@@ -1203,6 +1144,155 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "start model rendering",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "wss",
+              "threats": [
+                {
+                  "id": "1b49653c-93e2-463e-adb4-36e4d150bae2",
+                  "title": "Invalid registration at the STUN/TURN servers and connect to WebRTC",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker falsely registers as a legitimate STUN/TURN server during connection establishment to intercept WebRTC communication.",
+                  "mitigation": "1. Enforce the use of authenticated and authorized STUN/TURN servers.\n2. Use server-side certificates to verify the identity of STUN/TURN servers.\n3. Implement a hardcoded allowlist of trusted STUN/TURN servers.\n4. Use secure signaling protocols such as DTLS.\n5.  Regularly audit and monitor signaling logs for suspicious server registrations.",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "start model rendering"
+            ],
+            "id": "150af874-4ee6-4fff-abfd-31ea5337fb33",
+            "source": {
+              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "d16e8700-787b-4400-8972-782a18de524c",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "vertices": [
+              {
+                "x": 900,
+                "y": 240
+              },
+              {
+                "x": 900,
+                "y": 170
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "connect to streaming model",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "wss",
+              "threats": [
+                {
+                  "id": "0056ac83-cdf6-4efa-8a54-4efd71f2c84a",
+                  "title": "DDoS attack on STUN/TURN servers",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "An attacker floods the TURN server with excessive stun/relay requests, exhausting its resources.",
+                  "mitigation": "1. Enforce STUN/TURN rate-limiting mechanisms to throttle excessive requests.\n2. Scale horizontally by deploying additional TURN servers.'\n3. Deploy IP-based or token-based request filtering for TURN services.<b",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "connect to streaming model"
+            ],
+            "id": "de84224b-d269-418c-8012-06f6fa3fb28b",
+            "source": {
+              "cell": "4b777692-1bcc-4025-94a6-b85b52e9d978",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
+              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 430
+              },
+              {
+                "x": 430,
+                "y": 400
+              },
+              {
+                "x": 470,
+                "y": 390
+              },
+              {
+                "x": 620,
+                "y": 300
+              }
+            ]
+          },
+          {
             "position": {
               "x": 279,
               "y": 100
@@ -1343,7 +1433,41 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": true,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "b33e8866-8a62-432b-a017-0ab5edbc40e5",
+                  "title": "Expired token misuse ",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "An access token is accepted after its expiration due to missing or incorrect validation.\n",
+                  "mitigation": "1. Using OIDC client API to validate if access token is expired. If expired, removeUser and ask to signin again\n2. CAXperts providing with short lived tokens (5mins) and refresh tokens\n3. Refresh token rotation is set to 0 in keycloak, enabling to discard refresh_token after single use.\n",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                },
+                {
+                  "id": "9613d3fe-fe78-45fd-9812-32c0a38fc001",
+                  "title": "Silent renew abuse",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Silent token renewal is abused (e.g., via hidden iframes or background refresh) to maintain access without user awareness or beyond intended session duration.",
+                  "mitigation": "1. Using OIDC client to enable silentTokenRefresh\n2. Refresh token rotation is set to 0 in keycloak, enabling to discard refresh_token after single use.\n3. Enabled PKCE using OIDC client to handle token validations\n",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           }
         ]
@@ -1351,6 +1475,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 7
+    "threatTop": 17
   }
 }
