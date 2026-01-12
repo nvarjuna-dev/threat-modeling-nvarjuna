@@ -740,13 +740,6 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1142,7 +1135,7 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": ""
+                  "name": "block"
                 },
                 "strokeDasharray": null
               }
@@ -1153,13 +1146,13 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "internal",
+              "name": "interna",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
-              "isBidirectional": false,
+              "isBidirectional": true,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
@@ -1167,7 +1160,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "internal"
+              "interna"
             ],
             "id": "490236a4-73a0-4ba5-b2e2-4ea6729267f3",
             "source": {
@@ -1178,7 +1171,17 @@
               "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
               "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
             },
-            "vertices": []
+            "vertices": [],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
