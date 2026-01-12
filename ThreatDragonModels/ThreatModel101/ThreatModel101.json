@@ -1334,6 +1334,13 @@
               "type": "tm.Text",
               "name": "Internet",
               "hasOpenThreats": false
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
