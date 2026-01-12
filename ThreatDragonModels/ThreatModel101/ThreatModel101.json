@@ -1348,27 +1348,7 @@
                 "x": 280,
                 "y": 200
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
@@ -1539,6 +1519,37 @@
                   "score": ""
                 }
               ]
+            }
+          },
+          {
+            "position": {
+              "x": -111,
+              "y": 255
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Active Workspace"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "c446aa99-00a3-4f0a-815d-6398bda378fb",
+            "zIndex": 13,
+            "data": {
+              "type": "tm.Text",
+              "name": "Active Workspace",
+              "hasOpenThreats": false
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           }
         ]
