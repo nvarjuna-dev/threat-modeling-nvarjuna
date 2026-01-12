@@ -755,7 +755,8 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "18eaf04e-cd52-435d-9e77-741a9306db38"
+                "18eaf04e-cd52-435d-9e77-741a9306db38",
+                "490236a4-73a0-4ba5-b2e2-4ea6729267f3"
               ],
               "containedElements": [
                 "162d6ed3-0602-42a9-8ab8-bad940ada188"
@@ -1146,7 +1147,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "interna",
+              "name": "internal",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1157,10 +1158,12 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "962ede3f-9dbb-457a-801a-93c5a209c025"
+              ]
             },
             "labels": [
-              "interna"
+              "internal"
             ],
             "id": "490236a4-73a0-4ba5-b2e2-4ea6729267f3",
             "source": {
