@@ -502,8 +502,8 @@
                 "text": "Keycloak"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -600,7 +600,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -618,31 +618,18 @@
                   "new": false,
                   "number": 3,
                   "score": ""
-                },
-                {
-                  "id": "509bf607-bb4f-4760-9113-d0d6e26f9cbe",
-                  "title": "DDoS Attack on Keycloak services",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Denial of service",
-                  "description": "A malicious actor performs a Distributed Denial of Service (DDoS) attack against the partner’s Keycloak server or signaling server, disrupting authentication and communication.",
-                  "mitigation": "1. Deployment site to ensure DDoS protection services like (AWS Sheild or Cloudfare) are in place.\n2. Use auto-scaling feature\n3. Regularly test against simulated DDoS scenarios to assess resilience measures.",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 11,
-                  "score": ""
                 }
               ]
             }
           },
           {
             "position": {
-              "x": 680,
-              "y": 220
+              "x": 740,
+              "y": 190
             },
             "size": {
-              "width": 120,
-              "height": 110
+              "width": 140,
+              "height": 140
             },
             "attrs": {
               "text": {
@@ -753,140 +740,13 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
-            }
-          },
-          {
-            "position": {
-              "x": 730,
-              "y": 80
             },
-            "size": {
-              "width": 100,
-              "height": 100
-            },
-            "attrs": {
-              "text": {
-                "text": "Render \nServices"
-              },
-              "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "process",
-            "zIndex": 5,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
+            "tools": {
               "items": [
-                {
-                  "group": "top",
-                  "id": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
-                },
-                {
-                  "group": "right",
-                  "id": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-                },
-                {
-                  "group": "bottom",
-                  "id": "4231b301-1841-4fee-817b-a79246204409"
-                },
-                {
-                  "group": "left",
-                  "id": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
-                }
-              ]
-            },
-            "id": "d16e8700-787b-4400-8972-782a18de524c",
-            "data": {
-              "type": "tm.Process",
-              "name": "Render \nServices",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": [
-                {
-                  "id": "86dbd57f-97b8-426d-bd24-b3a289a3f934",
-                  "title": "DDoS attack on Render services",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "An attacker exploits a vulnerability in the @caxperts NPM package or WebRTC implementation to flood the servers with bogus connection requests.",
-                  "mitigation": "1. Deploy application-layer protection using Web Application Firewalls (WAFs).\n2. Regularly patch the @caxperts NPM package and WebRTC implementations with the latest security updates.\n3. Implement anomaly detection algorithms to detect and block suspicious connection patterns.\n4. Rate-limit incoming connection requests per user/session.",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 13,
-                  "score": ""
-                }
-              ]
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1170,22 +1030,28 @@
             },
             "vertices": [
               {
-                "x": 350,
-                "y": 430
-              },
-              {
-                "x": 430,
-                "y": 400
-              },
-              {
-                "x": 470,
+                "x": 340,
                 "y": 390
+              },
+              {
+                "x": 460,
+                "y": 360
               },
               {
                 "x": 620,
                 "y": 300
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "flow",
@@ -1274,76 +1140,6 @@
               {
                 "x": 140,
                 "y": 85
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "start model rendering",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "wss",
-              "threats": [
-                {
-                  "id": "1b49653c-93e2-463e-adb4-36e4d150bae2",
-                  "title": "Invalid registration at the STUN/TURN servers and connect to WebRTC",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Spoofing",
-                  "description": "An attacker falsely registers as a legitimate STUN/TURN server during connection establishment to intercept WebRTC communication.",
-                  "mitigation": "1. Enforce the use of authenticated and authorized STUN/TURN servers.\n2. Use server-side certificates to verify the identity of STUN/TURN servers.\n3. Implement a hardcoded allowlist of trusted STUN/TURN servers.\n4. Use secure signaling protocols such as DTLS.\n5.  Regularly audit and monitor signaling logs for suspicious server registrations.",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 9,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "start model rendering"
-            ],
-            "id": "150af874-4ee6-4fff-abfd-31ea5337fb33",
-            "source": {
-              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "target": {
-              "cell": "d16e8700-787b-4400-8972-782a18de524c",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "vertices": [
-              {
-                "x": 900,
-                "y": 240
-              },
-              {
-                "x": 900,
-                "y": 170
               }
             ]
           },
