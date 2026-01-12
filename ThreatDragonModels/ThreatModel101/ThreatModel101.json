@@ -172,7 +172,7 @@
                   "severity": "High",
                   "type": "Information disclosure",
                   "description": "Access token stored in browser can be impersonated by attacker and  stolen\n",
-                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Enforcing CSP on AW Gateway to allow only valid endpoints\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
+                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
                   "modelType": "default",
                   "new": false,
                   "number": 6,
@@ -205,6 +205,13 @@
                   "score": ""
                 }
               ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
