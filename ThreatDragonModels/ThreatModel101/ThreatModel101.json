@@ -36,8 +36,18 @@
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
+              "crossingFlows": [
+                "771d2ec8-d097-45c0-998a-2fb275cc789e",
+                "18eaf04e-cd52-435d-9e77-741a9306db38",
+                "8b0c97de-510f-4d65-9961-ae9b352b2abc",
+                "de84224b-d269-418c-8012-06f6fa3fb28b"
+              ],
+              "containedElements": [
+                "4b777692-1bcc-4025-94a6-b85b52e9d978",
+                "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
+                "aa874d0b-4298-4f51-9ad7-e00043926cb3",
+                "c446aa99-00a3-4f0a-815d-6398bda378fb"
+              ]
             }
           },
           {
@@ -971,7 +981,10 @@
               "isPublicNetwork": true,
               "protocol": "https",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
+              ]
             },
             "labels": [
               "open embedded viewer"
@@ -1038,8 +1051,9 @@
                 }
               ],
               "trustBoundaryIds": [
-                "3ed569ea-2620-4ca5-84d7-7f6888ab3090",
-                "962ede3f-9dbb-457a-801a-93c5a209c025"
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
+                "962ede3f-9dbb-457a-801a-93c5a209c025",
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
               ]
             },
             "labels": [
@@ -1132,6 +1146,7 @@
                 }
               ],
               "trustBoundaryIds": [
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
                 "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
               ]
             },
@@ -1278,7 +1293,9 @@
                   "score": ""
                 }
               ],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb"
+              ]
             },
             "labels": [
               "connect to streaming model"
@@ -1324,11 +1341,14 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
+                "771d2ec8-d097-45c0-998a-2fb275cc789e",
                 "18eaf04e-cd52-435d-9e77-741a9306db38",
                 "8b0c97de-510f-4d65-9961-ae9b352b2abc"
               ],
               "containedElements": [
-                "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2"
+                "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
+                "aa874d0b-4298-4f51-9ad7-e00043926cb3",
+                "c446aa99-00a3-4f0a-815d-6398bda378fb"
               ]
             },
             "labels": [
@@ -1543,13 +1563,6 @@
               "type": "tm.Text",
               "name": "Active Workspace",
               "hasOpenThreats": false
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           }
         ]
