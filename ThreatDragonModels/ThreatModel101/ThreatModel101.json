@@ -198,13 +198,20 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
-                  "mitigation": "1. AW to use OIDC client's \"nonce\" feature to validate the access token at the reciever end.\n2. Enabled short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
+                  "mitigation": "1. Enabled short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
                   "modelType": "default",
                   "new": false,
                   "number": 22,
                   "score": ""
                 }
               ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1164,17 +1171,7 @@
                 "x": 570,
                 "y": 140
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
