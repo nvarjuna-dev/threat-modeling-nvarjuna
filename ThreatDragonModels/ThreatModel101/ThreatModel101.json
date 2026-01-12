@@ -490,12 +490,12 @@
           },
           {
             "position": {
-              "x": 640,
-              "y": 80
+              "x": 630,
+              "y": 70.00000000000003
             },
             "size": {
               "width": 70,
-              "height": 100
+              "height": 80
             },
             "attrs": {
               "text": {
@@ -624,8 +624,8 @@
           },
           {
             "position": {
-              "x": 770,
-              "y": 200
+              "x": 690,
+              "y": 220
             },
             "size": {
               "width": 140,
@@ -740,6 +740,13 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1168,23 +1175,18 @@
             "id": "490236a4-73a0-4ba5-b2e2-4ea6729267f3",
             "source": {
               "cell": "162d6ed3-0602-42a9-8ab8-bad940ada188",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+              "port": "4231b301-1841-4fee-817b-a79246204409"
             },
             "target": {
               "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
               "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
             },
-            "vertices": [],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            "vertices": [
+              {
+                "x": 700,
+                "y": 180
+              }
+            ]
           },
           {
             "position": {
