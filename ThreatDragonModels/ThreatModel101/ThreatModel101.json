@@ -19,6 +19,29 @@
         "cells": [
           {
             "position": {
+              "x": -122.00000000000034,
+              "y": 255
+            },
+            "size": {
+              "width": 470,
+              "height": 220
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "d1e62e95-8e40-48bc-a666-bf412d2904eb",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            }
+          },
+          {
+            "position": {
               "x": -15,
               "y": 60
             },
@@ -887,45 +910,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "AW Gateway",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "crossingFlows": [
-                "18eaf04e-cd52-435d-9e77-741a9306db38",
-                "8b0c97de-510f-4d65-9961-ae9b352b2abc"
-              ],
-              "containedElements": [
-                "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2"
-              ]
-            },
-            "labels": [
-              "AW Gateway"
-            ],
-            "id": "3ed569ea-2620-4ca5-84d7-7f6888ab3090",
-            "source": {
-              "x": 15,
-              "y": 244
-            },
-            "target": {
-              "x": 510,
-              "y": 450
-            },
-            "vertices": [
-              {
-                "x": 280,
-                "y": 200
-              }
-            ]
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
               "name": "CAXperts UDiTH",
               "description": "",
               "isTrustBoundary": true,
@@ -1326,6 +1310,65 @@
                 "y": 300
               }
             ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "AW Gateway",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "18eaf04e-cd52-435d-9e77-741a9306db38",
+                "8b0c97de-510f-4d65-9961-ae9b352b2abc"
+              ],
+              "containedElements": [
+                "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2"
+              ]
+            },
+            "labels": [
+              "AW Gateway"
+            ],
+            "id": "3ed569ea-2620-4ca5-84d7-7f6888ab3090",
+            "source": {
+              "x": -120,
+              "y": 200
+            },
+            "target": {
+              "x": 510,
+              "y": 450
+            },
+            "vertices": [
+              {
+                "x": 280,
+                "y": 200
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
