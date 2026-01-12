@@ -157,11 +157,26 @@
                   "new": false,
                   "number": 19,
                   "score": ""
+                },
+                {
+                  "id": "eb7fa5fe-396f-465c-9aee-7a81e1912473",
+                  "title": "Token Replay",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
+                  "mitigation": "1. Using NONCE to validate the access token at the reciever end.\n2. Using short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 22,
+                  "score": ""
                 }
               ]
             },
             "tools": {
               "items": [
+                "boundary",
+                "button-remove",
                 "boundary",
                 "button-remove"
               ],
@@ -1334,13 +1349,6 @@
               "type": "tm.Text",
               "name": "Internet",
               "hasOpenThreats": false
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1495,6 +1503,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 20
+    "threatTop": 22
   }
 }
