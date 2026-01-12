@@ -752,21 +752,7 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": [
-                {
-                  "id": "7723d955-d3d1-407d-a7cc-4b2ff994acaa",
-                  "title": "Broken backend token validation",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Elevation of privilege",
-                  "description": "CAXperts UDiTH trusting invalid tokens without validations\n",
-                  "mitigation": "1. keycloak JWKS to validate JWT signature verification\n2. Reject expired token using OidcManager.removeUser() on expire event\n3. AW connection using OIDC client 'Issue Identifier' (iss) ensure token from valid keycloak realm\n4. CAXperts token aud: \"signaling\". Ensuring token is valid only for connecting to signalling service.\n5. Enfore least privillage in scope",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 7,
-                  "score": ""
-                }
-              ]
+              "threats": []
             }
           },
           {
