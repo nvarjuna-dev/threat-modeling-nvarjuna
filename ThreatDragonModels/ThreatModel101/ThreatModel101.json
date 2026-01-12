@@ -64,8 +64,8 @@
                 "text": "AW User"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -162,7 +162,7 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
               "threats": [
                 {
@@ -194,11 +194,11 @@
                 {
                   "id": "eb7fa5fe-396f-465c-9aee-7a81e1912473",
                   "title": "Token Replay",
-                  "status": "Mitigated",
-                  "severity": "Medium",
+                  "status": "Open",
+                  "severity": "High",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
-                  "mitigation": "1. Enabled short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
+                  "mitigation": "1. Enabled short-lived access tokens from keycloak\n2. Enabled \"aud=signalling\" specifying the audience of this token.\n3. Implement sender-constrained access tokens: ( Check with CAXperts)\n         - OAuth 2.0 DPoP (Demonstration of Proof of Possession)\n         - Mutual TLS (mTLS)",
                   "modelType": "default",
                   "new": false,
                   "number": 22,
