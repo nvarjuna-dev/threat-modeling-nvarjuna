@@ -48,6 +48,13 @@
                 "aa874d0b-4298-4f51-9ad7-e00043926cb3",
                 "c446aa99-00a3-4f0a-815d-6398bda378fb"
               ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -172,7 +179,7 @@
                   "severity": "High",
                   "type": "Information disclosure",
                   "description": "Access token stored in browser can be impersonated by attacker and  stolen\n",
-                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Enforcing CSP on AW Gateway to allow only valid endpoints\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
+                  "mitigation": "1.  Key cloak providing Short lived tokens\n2.  Enforcing CSP on AW Gateway\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
                   "modelType": "default",
                   "new": false,
                   "number": 6,
@@ -185,7 +192,7 @@
                   "severity": "High",
                   "type": "Spoofing",
                   "description": "An attacker steals a valid refresh token (via XSS, malware, browser storage access etc..) and uses it to continuously create new access tokens, even after the original access token expires.",
-                  "mitigation": "1. Keycloak configurations in place to generate short lived access tokens\n2. Enabled 'Revoke Refresh Token' option at Keycloak, to discard refresh token after single use (settings at Keycloak).",
+                  "mitigation": "1. Create shorter lived access tokens\n2. Enable 'Revoke Refresh Token' option at Keycloak\n3. Discard refresh token after single use (settings at Keycloak)",
                   "modelType": "default",
                   "new": false,
                   "number": 19,
@@ -198,7 +205,7 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
-                  "mitigation": "1. AW to use OIDC client's \"nonce\" feature to validate the access token at the reciever end.\n2. Enabled short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
+                  "mitigation": "1. Using NONCE to validate the access token at the reciever end.\n2. Using short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
                   "modelType": "default",
                   "new": false,
                   "number": 22,
@@ -208,8 +215,6 @@
             },
             "tools": {
               "items": [
-                "boundary",
-                "button-remove",
                 "boundary",
                 "button-remove",
                 "boundary",
