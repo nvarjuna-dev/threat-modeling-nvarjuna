@@ -48,13 +48,6 @@
                 "aa874d0b-4298-4f51-9ad7-e00043926cb3",
                 "c446aa99-00a3-4f0a-815d-6398bda378fb"
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -179,7 +172,7 @@
                   "severity": "High",
                   "type": "Information disclosure",
                   "description": "Access token stored in browser can be impersonated by attacker and  stolen\n",
-                  "mitigation": "1.  Key cloak providing Short lived tokens\n2.  Enforcing CSP on AW Gateway\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
+                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Enforcing CSP on AW Gateway to allow only valid endpoints\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
                   "modelType": "default",
                   "new": false,
                   "number": 6,
@@ -192,7 +185,7 @@
                   "severity": "High",
                   "type": "Spoofing",
                   "description": "An attacker steals a valid refresh token (via XSS, malware, browser storage access etc..) and uses it to continuously create new access tokens, even after the original access token expires.",
-                  "mitigation": "1. Create shorter lived access tokens\n2. Enable 'Revoke Refresh Token' option at Keycloak\n3. Discard refresh token after single use (settings at Keycloak)",
+                  "mitigation": "1. Keycloak configurations in place to generate short lived access tokens\n2. Enabled 'Revoke Refresh Token' option at Keycloak, to discard refresh token after single use (settings at Keycloak).",
                   "modelType": "default",
                   "new": false,
                   "number": 19,
@@ -205,22 +198,13 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
-                  "mitigation": "1. Using NONCE to validate the access token at the reciever end.\n2. Using short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
+                  "mitigation": "1. AW to use OIDC client's \"nonce\" feature to validate the access token at the reciever end.\n2. Enabled short-lived access tokens from keycloak\n3. Enabled \"aud=signalling\" specifying the audience of this token.",
                   "modelType": "default",
                   "new": false,
                   "number": 22,
                   "score": ""
                 }
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -348,7 +332,7 @@
                   "severity": "High",
                   "type": "Spoofing",
                   "description": "A malicious third-party application embeds the @caxperts NPM package and uses it to appear as the legitimate viewer in Active Workspace.",
-                  "mitigation": "1.  Conduct supply chain security audits of third-party libraries like @caxperts.\n2. Implementing CSP policies at AW Gateway\n3. Using OIDC client which enables PKCE and State validation",
+                  "mitigation": "1. AW build to ensure npm security audits of third-party libraries like @caxperts.\n2. Implementing strict CSP policies at AW Gateway\n3. Using OIDC client which enables PKCE and State validation",
                   "modelType": "default",
                   "new": false,
                   "number": 8,
@@ -479,10 +463,10 @@
                   "id": "bc214f9d-777e-430f-b878-846d08938bba",
                   "title": "Attacker exploits OIDC scope privillages",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Elevation of privilege",
                   "description": "An attacker exploits misconfigured or insufficient OIDC client configurations to escalate permissions (e.g., scope manipulation).",
-                  "mitigation": "1. Make sure OIDC client configurations are setup from Deployment Center and stored securely.\n2. Implement principle of least privillage at the OIDC scope parameter\n---- TBD 3. CAXperts to provide Authorization policies based on Roles ----",
+                  "mitigation": "1. Make sure OIDC client configurations are setup from Deployment Center and stored securely.\n2. Implement principle of least privillage at the OIDC scope parameter\n3. CAXperts to provide Authorization policies based on Roles (Need to verify with CAXperts)",
                   "modelType": "default",
                   "new": false,
                   "number": 10,
@@ -495,7 +479,7 @@
                   "severity": "Medium",
                   "type": "Tampering",
                   "description": "Access token containing more then nessesary privillage pose a bigger threat when something fails. Intruder could gain high level access to backend system and compromise the APIs",
-                  "mitigation": "1. Enfore least privillage during token grant, using minimal SCOPE\n2. Issue different tokens per client\n3. Use short lived tokens",
+                  "mitigation": "1. AW code to use OIDC client to allow least privillage during token grant, using minimal SCOPE\n2. Keycloak takes care of granting different tokens per client\n3. Using short lived tokens",
                   "modelType": "default",
                   "new": false,
                   "number": 14,
@@ -642,7 +626,7 @@
                   "severity": "High",
                   "type": "Denial of service",
                   "description": "A malicious actor performs a Distributed Denial of Service (DDoS) attack against the partner’s Keycloak server or signaling server, disrupting authentication and communication.",
-                  "mitigation": "1. Using DDoS protection services like (AWS Sheild or Cloudfare)\n2. Use auto-scaling feature\n3. Regularly test against simulated DDoS scenarios to assess resilience measures.",
+                  "mitigation": "1. Deployment site to ensure DDoS protection services like (AWS Sheild or Cloudfare) are in place.\n2. Use auto-scaling feature\n3. Regularly test against simulated DDoS scenarios to assess resilience measures.",
                   "modelType": "default",
                   "new": false,
                   "number": 11,
