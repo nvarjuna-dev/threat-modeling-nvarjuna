@@ -31,8 +31,8 @@
                 "text": "AW User"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -129,7 +129,7 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": [
                 {
@@ -147,14 +147,14 @@
                 },
                 {
                   "id": "3406d470-ecfa-4d6f-ab60-6af3ba6fdb30",
-                  "title": "New generic threat",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "title": "Refresh Token Abuse",
+                  "status": "Mitigated",
+                  "severity": "High",
                   "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "An attacker steals a valid refresh token (via XSS, malware, browser storage access etc..) and uses it to continuously create new access tokens, even after the original access token expires.",
+                  "mitigation": "1. Create shorter lived access tokens\n2. Enable 'Revoke Refresh Token' option at Keycloak\n3. Discard refresh token after single use (settings at Keycloak)",
                   "modelType": "default",
-                  "new": true,
+                  "new": false,
                   "number": 19,
                   "score": ""
                 }
@@ -1481,13 +1481,6 @@
                   "score": ""
                 }
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           }
         ]
