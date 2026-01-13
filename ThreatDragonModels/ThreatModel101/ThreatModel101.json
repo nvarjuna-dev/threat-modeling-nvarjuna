@@ -38,9 +38,9 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "771d2ec8-d097-45c0-998a-2fb275cc789e",
+                "18eaf04e-cd52-435d-9e77-741a9306db38",
                 "de84224b-d269-418c-8012-06f6fa3fb28b",
-                "8b0c97de-510f-4d65-9961-ae9b352b2abc",
-                "18eaf04e-cd52-435d-9e77-741a9306db38"
+                "8b0c97de-510f-4d65-9961-ae9b352b2abc"
               ],
               "containedElements": [
                 "4b777692-1bcc-4025-94a6-b85b52e9d978",
@@ -850,8 +850,8 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "771d2ec8-d097-45c0-998a-2fb275cc789e",
-                "8b0c97de-510f-4d65-9961-ae9b352b2abc",
-                "18eaf04e-cd52-435d-9e77-741a9306db38"
+                "18eaf04e-cd52-435d-9e77-741a9306db38",
+                "8b0c97de-510f-4d65-9961-ae9b352b2abc"
               ],
               "containedElements": [
                 "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
@@ -929,6 +929,88 @@
               {
                 "x": 700,
                 "y": 180
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "authorize and get access tokens",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "https",
+              "threats": [
+                {
+                  "id": "7f8d79a8-7385-4cc8-a0dd-1f003d6d5c19",
+                  "title": "Authorization code interception",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The attack happens when an attacker manages to capture the authorization code in transit\n\ta. Man-in-the-Middle  attack\n\tb. Open redirect / wildcard redirect URIs\n        c. XSS / malicious script in SPA",
+                  "mitigation": "1. Enabled PKCE at AW using OIDC client package and using response_type=code \n2.  OIDC client package to take care of \"state\" validation\n3. Enfored HTTPS and valid redirect URLs only at the keycloak\n",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
+                "962ede3f-9dbb-457a-801a-93c5a209c025",
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
+              ]
+            },
+            "labels": [
+              "authorize and get access tokens"
+            ],
+            "id": "18eaf04e-cd52-435d-9e77-741a9306db38",
+            "source": {
+              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "162d6ed3-0602-42a9-8ab8-bad940ada188",
+              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 330
+              },
+              {
+                "x": 430,
+                "y": 310
+              },
+              {
+                "x": 480,
+                "y": 230
+              },
+              {
+                "x": 570,
+                "y": 140
               }
             ]
           },
@@ -1037,19 +1119,6 @@
                   "new": false,
                   "number": 2,
                   "score": ""
-                },
-                {
-                  "id": "0c0a3242-de5c-4b7b-ac24-d8bac40c06d0",
-                  "title": "XSS enabling auth flow manipulation",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Attacker can execute cross-side scripting to intercept authorization and steal tokens\n",
-                  "mitigation": "Added valid CSP rules at AW Gateway to allow only CAXperts and Keycloak connections ",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 5,
-                  "score": ""
                 }
               ],
               "trustBoundaryIds": [
@@ -1082,89 +1151,17 @@
                 "x": 140,
                 "y": 85
               }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "authorize and get access tokens",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "https",
-              "threats": [
-                {
-                  "id": "7f8d79a8-7385-4cc8-a0dd-1f003d6d5c19",
-                  "title": "Authorization code interception",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Spoofing",
-                  "description": "The attack happens when an attacker manages to capture the authorization code in transit\n\ta. Man-in-the-Middle  attack\n\tb. Open redirect / wildcard redirect URIs\n        c. XSS / malicious script in SPA",
-                  "mitigation": "1. Enabled PKCE at AW using OIDC client package and using response_type=code \n2.  OIDC client package to take care of \"state\" validation\n3. Enfored HTTPS and valid redirect URLs only at the keycloak\n",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 4,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": [
-                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
-                "962ede3f-9dbb-457a-801a-93c5a209c025",
-                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
-              ]
-            },
-            "labels": [
-              "authorize and get access tokens"
             ],
-            "id": "18eaf04e-cd52-435d-9e77-741a9306db38",
-            "source": {
-              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
-            },
-            "target": {
-              "cell": "162d6ed3-0602-42a9-8ab8-bad940ada188",
-              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
-            },
-            "vertices": [
-              {
-                "x": 320,
-                "y": 330
-              },
-              {
-                "x": 430,
-                "y": 310
-              },
-              {
-                "x": 480,
-                "y": 230
-              },
-              {
-                "x": 570,
-                "y": 140
-              }
-            ]
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
