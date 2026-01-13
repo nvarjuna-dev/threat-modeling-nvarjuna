@@ -167,12 +167,12 @@
               "threats": [
                 {
                   "id": "7e5381f3-083b-4655-9b4c-7aadc3228eef",
-                  "title": "Access token theft and Replay",
+                  "title": "Authorization token (ID Token) theft",
                   "status": "Mitigated",
                   "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "Access token stored in browser can be impersonated by attacker and  stolen\n",
-                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n3.  Enabled \"aud=signalling\" specifying the audience of this token.\n",
+                  "type": "Spoofing",
+                  "description": "ID token stored in browser can be impersonated by attacker and stolen.\n\n",
+                  "mitigation": "1.  We are using OIDC client packages that enables 'nonce' validation against id tokens.\n2. Key cloak configurations in place to generate 'short lived tokens'\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n4.  Enabled \"aud=signalling\" specifying the audience of this token.\n",
                   "modelType": "default",
                   "new": false,
                   "number": 6,
@@ -193,18 +193,25 @@
                 },
                 {
                   "id": "eb7fa5fe-396f-465c-9aee-7a81e1912473",
-                  "title": "Token Replay",
+                  "title": "Access Token Replay",
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Critical",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
-                  "mitigation": "1. Enabled short-lived access tokens from keycloak\n2. Enabled \"aud=signalling\" specifying the audience of this token.\n3. Implement sender-constrained access tokens: ( Check with CAXperts)\n         - OAuth 2.0 DPoP (Demonstration of Proof of Possession)\n         - Mutual TLS (mTLS)",
+                  "mitigation": "Implement sender-constrained access tokens: ( Check with CAXperts)\n         - OAuth 2.0 DPoP (Demonstration of Proof of Possession)\n         - Mutual TLS (mTLS)",
                   "modelType": "default",
                   "new": false,
                   "number": 22,
                   "score": ""
                 }
               ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1151,17 +1158,7 @@
                 "x": 140,
                 "y": 85
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
