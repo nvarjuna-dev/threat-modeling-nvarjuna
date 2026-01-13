@@ -167,12 +167,12 @@
               "threats": [
                 {
                   "id": "7e5381f3-083b-4655-9b4c-7aadc3228eef",
-                  "title": "Access token theft",
+                  "title": "Access token theft and Replay",
                   "status": "Mitigated",
                   "severity": "High",
                   "type": "Information disclosure",
                   "description": "Access token stored in browser can be impersonated by attacker and  stolen\n",
-                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
+                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n3.  Enabled \"aud=signalling\" specifying the audience of this token.\n",
                   "modelType": "default",
                   "new": false,
                   "number": 6,
@@ -205,13 +205,6 @@
                   "score": ""
                 }
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
