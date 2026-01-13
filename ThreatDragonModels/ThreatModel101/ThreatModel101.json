@@ -37,9 +37,9 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "771d2ec8-d097-45c0-998a-2fb275cc789e",
                 "18eaf04e-cd52-435d-9e77-741a9306db38",
                 "de84224b-d269-418c-8012-06f6fa3fb28b",
+                "771d2ec8-d097-45c0-998a-2fb275cc789e",
                 "8b0c97de-510f-4d65-9961-ae9b352b2abc"
               ],
               "containedElements": [
@@ -205,13 +205,6 @@
                   "score": ""
                 }
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -789,61 +782,6 @@
             ]
           },
           {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "open embedded viewer",
-              "description": "User opens viewer tab from Active workspace Plant breakdown structure",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": true,
-              "isPublicNetwork": true,
-              "protocol": "https",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
-                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
-              ]
-            },
-            "labels": [
-              "open embedded viewer"
-            ],
-            "id": "771d2ec8-d097-45c0-998a-2fb275cc789e",
-            "source": {
-              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
-              "port": "1e03eeb1-f779-4e72-8ccb-fc63b7c86dfd"
-            },
-            "target": {
-              "cell": "aa874d0b-4298-4f51-9ad7-e00043926cb3",
-              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
-            },
-            "vertices": [
-              {
-                "x": 40,
-                "y": 160
-              }
-            ]
-          },
-          {
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
@@ -856,8 +794,8 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "771d2ec8-d097-45c0-998a-2fb275cc789e",
                 "18eaf04e-cd52-435d-9e77-741a9306db38",
+                "771d2ec8-d097-45c0-998a-2fb275cc789e",
                 "8b0c97de-510f-4d65-9961-ae9b352b2abc"
               ],
               "containedElements": [
@@ -1092,6 +1030,61 @@
                   "name": "block"
                 },
                 "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "open embedded viewer",
+              "description": "User opens viewer tab from Active workspace Plant breakdown structure",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [],
+              "trustBoundaryIds": [
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
+              ]
+            },
+            "labels": [
+              "open embedded viewer"
+            ],
+            "id": "771d2ec8-d097-45c0-998a-2fb275cc789e",
+            "source": {
+              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
+              "port": "1e03eeb1-f779-4e72-8ccb-fc63b7c86dfd"
+            },
+            "target": {
+              "cell": "aa874d0b-4298-4f51-9ad7-e00043926cb3",
+              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
+            },
+            "vertices": [
+              {
+                "x": 40,
+                "y": 160
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
                   "name": ""
                 },
                 "strokeDasharray": null
@@ -1121,7 +1114,7 @@
                   "severity": "High",
                   "type": "Tampering",
                   "description": "Tampering Popup Window to capture OIDC request parameters such as redirect_uri, client_id or scope.",
-                  "mitigation": "1. CSP entries are added at the Active workspace Gateway allowing only valid Keycloak redirections.\n2. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n3. Teamcenter and Authorization server (keycloak) are served in https://",
+                  "mitigation": "1. Strong CSP validation check at Active workspace Gateway allowing only valid Keycloak redirections.\n2. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n3. Teamcenter and Authorization server (keycloak) are served in https://",
                   "modelType": "default",
                   "new": false,
                   "number": 2,
@@ -1158,7 +1151,17 @@
                 "x": 140,
                 "y": 85
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
