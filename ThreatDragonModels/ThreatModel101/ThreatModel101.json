@@ -38,9 +38,9 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "771d2ec8-d097-45c0-998a-2fb275cc789e",
-                "de84224b-d269-418c-8012-06f6fa3fb28b",
                 "8b0c97de-510f-4d65-9961-ae9b352b2abc",
-                "18eaf04e-cd52-435d-9e77-741a9306db38"
+                "18eaf04e-cd52-435d-9e77-741a9306db38",
+                "de84224b-d269-418c-8012-06f6fa3fb28b"
               ],
               "containedElements": [
                 "4b777692-1bcc-4025-94a6-b85b52e9d978",
@@ -167,12 +167,12 @@
               "threats": [
                 {
                   "id": "7e5381f3-083b-4655-9b4c-7aadc3228eef",
-                  "title": "Access token theft",
+                  "title": "Authorization token (ID Token) theft",
                   "status": "Mitigated",
                   "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "Access token stored in browser can be impersonated by attacker and  stolen\n",
-                  "mitigation": "1.  Key cloak configurations in place to generate 'short lived tokens'\n2.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n",
+                  "type": "Spoofing",
+                  "description": "ID token stored in browser can be impersonated by attacker and stolen.\n\n",
+                  "mitigation": "1.  We are using OIDC client packages that enables 'nonce' validation against id tokens.\n2. Key cloak configurations in place to generate 'short lived tokens'\n3.  Key cloak tokens are stored in Session Storage and hence cleared during Tab close.\n4.  Enabled \"aud=signalling\" specifying the audience of this token.\n",
                   "modelType": "default",
                   "new": false,
                   "number": 6,
@@ -193,25 +193,18 @@
                 },
                 {
                   "id": "eb7fa5fe-396f-465c-9aee-7a81e1912473",
-                  "title": "Token Replay",
+                  "title": "Access Token Replay",
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Critical",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
-                  "mitigation": "1. Enabled short-lived access tokens from keycloak\n2. Enabled \"aud=signalling\" specifying the audience of this token.\n3. Implement sender-constrained access tokens: ( Check with CAXperts)\n         - OAuth 2.0 DPoP (Demonstration of Proof of Possession)\n         - Mutual TLS (mTLS)",
+                  "mitigation": "Implement sender-constrained access tokens: ( Check with CAXperts)\n         - OAuth 2.0 DPoP (Demonstration of Proof of Possession)\n         - Mutual TLS (mTLS)",
                   "modelType": "default",
                   "new": false,
                   "number": 22,
                   "score": ""
                 }
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -789,61 +782,6 @@
             ]
           },
           {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "open embedded viewer",
-              "description": "User opens viewer tab from Active workspace Plant breakdown structure",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": true,
-              "isPublicNetwork": true,
-              "protocol": "https",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
-                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
-              ]
-            },
-            "labels": [
-              "open embedded viewer"
-            ],
-            "id": "771d2ec8-d097-45c0-998a-2fb275cc789e",
-            "source": {
-              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
-              "port": "1e03eeb1-f779-4e72-8ccb-fc63b7c86dfd"
-            },
-            "target": {
-              "cell": "aa874d0b-4298-4f51-9ad7-e00043926cb3",
-              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
-            },
-            "vertices": [
-              {
-                "x": 40,
-                "y": 160
-              }
-            ]
-          },
-          {
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
@@ -959,45 +897,38 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "connect to streaming model",
-              "description": "",
+              "name": "open embedded viewer",
+              "description": "User opens viewer tab from Active workspace Plant breakdown structure",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": true,
               "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "wss",
+              "isPublicNetwork": true,
+              "protocol": "https",
               "threats": [],
               "trustBoundaryIds": [
-                "d1e62e95-8e40-48bc-a666-bf412d2904eb"
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
               ]
             },
             "labels": [
-              "connect to streaming model"
+              "open embedded viewer"
             ],
-            "id": "de84224b-d269-418c-8012-06f6fa3fb28b",
+            "id": "771d2ec8-d097-45c0-998a-2fb275cc789e",
             "source": {
-              "cell": "4b777692-1bcc-4025-94a6-b85b52e9d978",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
+              "port": "1e03eeb1-f779-4e72-8ccb-fc63b7c86dfd"
             },
             "target": {
-              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
-              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
+              "cell": "aa874d0b-4298-4f51-9ad7-e00043926cb3",
+              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
             },
             "vertices": [
               {
-                "x": 340,
-                "y": 390
-              },
-              {
-                "x": 460,
-                "y": 360
-              },
-              {
-                "x": 620,
-                "y": 300
+                "x": 40,
+                "y": 160
               }
             ]
           },
@@ -1039,23 +970,10 @@
                   "severity": "High",
                   "type": "Tampering",
                   "description": "Tampering Popup Window to capture OIDC request parameters such as redirect_uri, client_id or scope.",
-                  "mitigation": "1. CSP entries are added at the Active workspace Gateway allowing only valid Keycloak redirections.\n2. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n3. Teamcenter and Authorization server (keycloak) are served in https://",
+                  "mitigation": "1. Strong CSP validation check at Active workspace Gateway allowing only valid Keycloak redirections.\n2. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n3. Teamcenter and Authorization server (keycloak) are served in https://",
                   "modelType": "default",
                   "new": false,
                   "number": 2,
-                  "score": ""
-                },
-                {
-                  "id": "0c0a3242-de5c-4b7b-ac24-d8bac40c06d0",
-                  "title": "XSS enabling auth flow manipulation",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Attacker can execute cross-side scripting to intercept authorization and steal tokens\n",
-                  "mitigation": "Added valid CSP rules at AW Gateway to allow only CAXperts and Keycloak connections ",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 5,
                   "score": ""
                 }
               ],
@@ -1170,6 +1088,68 @@
               {
                 "x": 570,
                 "y": 140
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "connect to streaming model",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "wss",
+              "threats": [],
+              "trustBoundaryIds": [
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb"
+              ]
+            },
+            "labels": [
+              "connect to streaming model"
+            ],
+            "id": "de84224b-d269-418c-8012-06f6fa3fb28b",
+            "source": {
+              "cell": "4b777692-1bcc-4025-94a6-b85b52e9d978",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+            },
+            "target": {
+              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
+              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
+            },
+            "vertices": [
+              {
+                "x": 340,
+                "y": 390
+              },
+              {
+                "x": 460,
+                "y": 360
+              },
+              {
+                "x": 620,
+                "y": 300
               }
             ]
           },
