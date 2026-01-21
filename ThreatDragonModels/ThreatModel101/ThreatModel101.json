@@ -193,18 +193,25 @@
                 },
                 {
                   "id": "eb7fa5fe-396f-465c-9aee-7a81e1912473",
-                  "title": "Access Token Replay",
+                  "title": "Access Token Theft and Replay",
                   "status": "Open",
                   "severity": "Critical",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused by an attacker to impersonate a legitimate client.\n",
-                  "mitigation": "Implement sender-constrained access tokens: ( Check with CAXperts)\n         - OAuth 2.0 DPoP (Demonstration of Proof of Possession)\n         - Mutual TLS (mTLS)",
+                  "mitigation": "Discussed with Partner\nImplement sender-constrained access tokens: ( Check with CAXperts)\n         - OAuth 2.0 DPoP (Demonstration of Proof of Possession)\n         - Mutual TLS (mTLS)",
                   "modelType": "default",
                   "new": false,
                   "number": 22,
                   "score": ""
                 }
               ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
