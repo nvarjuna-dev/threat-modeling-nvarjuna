@@ -38,9 +38,9 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "771d2ec8-d097-45c0-998a-2fb275cc789e",
-                "8b0c97de-510f-4d65-9961-ae9b352b2abc",
+                "de84224b-d269-418c-8012-06f6fa3fb28b",
                 "18eaf04e-cd52-435d-9e77-741a9306db38",
-                "de84224b-d269-418c-8012-06f6fa3fb28b"
+                "8b0c97de-510f-4d65-9961-ae9b352b2abc"
               ],
               "containedElements": [
                 "4b777692-1bcc-4025-94a6-b85b52e9d978",
@@ -205,15 +205,6 @@
                   "score": ""
                 }
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -364,8 +355,8 @@
                 "text": "OIDC-client-ts \nNPM Package"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -462,7 +453,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": true,
@@ -471,27 +462,14 @@
                 {
                   "id": "bc214f9d-777e-430f-b878-846d08938bba",
                   "title": "Attacker exploits OIDC scope privillages",
-                  "status": "Open",
-                  "severity": "High",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Elevation of privilege",
                   "description": "An attacker exploits misconfigured or insufficient OIDC client configurations to escalate permissions (e.g., scope manipulation).",
-                  "mitigation": "1. Make sure OIDC client configurations are setup from Deployment Center and stored securely.\n2. Implement principle of least privillage at the OIDC scope parameter\n3. CAXperts to provide Authorization policies based on Roles (Need to verify with CAXperts)",
+                  "mitigation": "1. OIDC client configurations are deployed from Deployment Center and stored securely in Teamcenter\n2. Implemented principle of least privillage at the OIDC scope parameter\n3. CAXperts APIs are read-only APIs and have provided a custom scope 'wfs_api' to be passed as auth scope",
                   "modelType": "default",
                   "new": false,
                   "number": 10,
-                  "score": ""
-                },
-                {
-                  "id": "e0be6327-2d8c-47d1-b658-41c25aea3b85",
-                  "title": "Over-privileged roles in tokens",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Access token containing more then nessesary privillage pose a bigger threat when something fails. Intruder could gain high level access to backend system and compromise the APIs",
-                  "mitigation": "1. AW code to use OIDC client to allow least privillage during token grant, using minimal SCOPE\n2. Keycloak takes care of granting different tokens per client\n3. Using short lived tokens",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 14,
                   "score": ""
                 }
               ]
@@ -749,6 +727,13 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -804,8 +789,8 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "771d2ec8-d097-45c0-998a-2fb275cc789e",
-                "8b0c97de-510f-4d65-9961-ae9b352b2abc",
-                "18eaf04e-cd52-435d-9e77-741a9306db38"
+                "18eaf04e-cd52-435d-9e77-741a9306db38",
+                "8b0c97de-510f-4d65-9961-ae9b352b2abc"
               ],
               "containedElements": [
                 "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
@@ -950,7 +935,7 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": ""
+                  "name": "block"
                 },
                 "strokeDasharray": null
               }
@@ -961,60 +946,45 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "signin popup",
+              "name": "connect to streaming model",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
-              "isBidirectional": false,
+              "isBidirectional": true,
               "isEncrypted": true,
-              "isPublicNetwork": true,
-              "protocol": "https",
-              "threats": [
-                {
-                  "id": "305a6de7-88df-4702-8782-d923ee78af31",
-                  "title": "Tampering Popup Window",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Tampering Popup Window to capture OIDC request parameters such as redirect_uri, client_id or scope.",
-                  "mitigation": "1. Strong CSP validation check at Active workspace Gateway allowing only valid Keycloak redirections.\n2. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n3. Teamcenter and Authorization server (keycloak) are served in https://",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 2,
-                  "score": ""
-                }
-              ],
+              "isPublicNetwork": false,
+              "protocol": "wss",
+              "threats": [],
               "trustBoundaryIds": [
-                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
-                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb"
               ]
             },
             "labels": [
-              "signin popup"
+              "connect to streaming model"
             ],
-            "id": "8b0c97de-510f-4d65-9961-ae9b352b2abc",
+            "id": "de84224b-d269-418c-8012-06f6fa3fb28b",
             "source": {
-              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
-              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
+              "cell": "4b777692-1bcc-4025-94a6-b85b52e9d978",
+              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
             },
             "target": {
-              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
-              "port": "f911f074-b519-4486-9253-80682dd7d4fc"
+              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
+              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
             },
             "vertices": [
               {
-                "x": 180,
-                "y": 180
+                "x": 340,
+                "y": 390
               },
               {
-                "x": 185,
-                "y": 130
+                "x": 460,
+                "y": 360
               },
               {
-                "x": 140,
-                "y": 85
+                "x": 620,
+                "y": 300
               }
             ]
           },
@@ -1109,7 +1079,7 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": "block"
+                  "name": ""
                 },
                 "strokeDasharray": null
               }
@@ -1120,45 +1090,60 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "connect to streaming model",
+              "name": "signin popup",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
-              "isBidirectional": true,
+              "isBidirectional": false,
               "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "wss",
-              "threats": [],
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "id": "305a6de7-88df-4702-8782-d923ee78af31",
+                  "title": "Tampering Popup Window",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Tampering Popup Window to capture OIDC request parameters such as redirect_uri, client_id or scope.",
+                  "mitigation": "1. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n2. Teamcenter and Authorization server (keycloak) are served in https://",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
-                "d1e62e95-8e40-48bc-a666-bf412d2904eb"
+                "d1e62e95-8e40-48bc-a666-bf412d2904eb",
+                "3ed569ea-2620-4ca5-84d7-7f6888ab3090"
               ]
             },
             "labels": [
-              "connect to streaming model"
+              "signin popup"
             ],
-            "id": "de84224b-d269-418c-8012-06f6fa3fb28b",
+            "id": "8b0c97de-510f-4d65-9961-ae9b352b2abc",
             "source": {
-              "cell": "4b777692-1bcc-4025-94a6-b85b52e9d978",
-              "port": "d810cc36-a2ee-4334-9bf3-cdf842c86c2f"
+              "cell": "3205e453-bfaf-4dc7-a96e-66aa5ddff8e2",
+              "port": "1a43bed7-5db5-4614-9c5a-b51f4129f994"
             },
             "target": {
-              "cell": "773ab04a-06ec-4de1-bed4-c567d7981a52",
-              "port": "a8289a3c-0b1b-4b47-994e-7750b7942e8b"
+              "cell": "5da7ee5a-12f4-4e8d-8458-32d2bc736011",
+              "port": "f911f074-b519-4486-9253-80682dd7d4fc"
             },
             "vertices": [
               {
-                "x": 340,
-                "y": 390
+                "x": 180,
+                "y": 180
               },
               {
-                "x": 460,
-                "y": 360
+                "x": 185,
+                "y": 130
               },
               {
-                "x": 620,
-                "y": 300
+                "x": 140,
+                "y": 85
               }
             ]
           },
@@ -1324,7 +1309,7 @@
                   "severity": "Medium",
                   "type": "Tampering",
                   "description": "Silent token renewal is abused (e.g., via hidden iframes or background refresh) to maintain access without user awareness or beyond intended session duration.",
-                  "mitigation": "1. Using OIDC client to enable silentTokenRefresh\n2. Refresh token rotation is set to 0 in keycloak, enabling to discard refresh_token after single use.\n3. Enabled PKCE using OIDC client to handle token validations\n",
+                  "mitigation": "1. Using OIDC client to enable silentTokenRefresh\n2. Refresh token rotation is set to 0 in keycloak, enabling to discard refresh_token after single use.\n",
                   "modelType": "default",
                   "new": false,
                   "number": 17,
