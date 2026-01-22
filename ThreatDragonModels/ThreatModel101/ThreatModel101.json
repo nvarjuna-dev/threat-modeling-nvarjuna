@@ -175,7 +175,7 @@
                   "mitigation": "1.  We are using OIDC client packages that enables 'nonce' validation against id tokens.\n2.  Key cloak tokens are stored in Session Storage and hence cleared during session close.\n3.  Enabled \"aud=signalling\" specifying the audience of this token.\n",
                   "modelType": "default",
                   "new": false,
-                  "number": 6,
+                  "number": 1,
                   "score": ""
                 },
                 {
@@ -188,7 +188,7 @@
                   "mitigation": "1. Keycloak configurations in place to generate short lived access tokens\n2. Enabled 'Revoke Refresh Token' option at Keycloak, to discard refresh token after single use (settings at Keycloak).",
                   "modelType": "default",
                   "new": false,
-                  "number": 19,
+                  "number": 2,
                   "score": ""
                 },
                 {
@@ -201,7 +201,7 @@
                   "mitigation": "Discussed with Partner (CAXperts) - Partner are considering to remodel their authentication to \"sender-constrained access tokens\". (will not be possible in Catalyst release, to be considered for commertial CALM-CAXperts release).\n\nTemporary mitigations:\na. Using short-lived access token (300 seconds)\nb. Using Https over TLS\n",
                   "modelType": "default",
                   "new": false,
-                  "number": 22,
+                  "number": 3,
                   "score": ""
                 }
               ]
@@ -335,7 +335,7 @@
                   "mitigation": "1. AW build to ensure npm security audits of third-party libraries like @caxperts.\n2. Enable this NPM package as part of AW Artifactory",
                   "modelType": "default",
                   "new": false,
-                  "number": 8,
+                  "number": 4,
                   "score": ""
                 }
               ]
@@ -469,7 +469,7 @@
                   "mitigation": "1. OIDC client configurations are deployed from Deployment Center and stored securely in Teamcenter\n2. Implemented principle of least privillage at the OIDC scope parameter\n3. CAXperts APIs are read-only APIs and have provided a custom scope 'wfs_api' to be passed as auth scope",
                   "modelType": "default",
                   "new": false,
-                  "number": 10,
+                  "number": 5,
                   "score": ""
                 }
               ]
@@ -603,7 +603,7 @@
                   "mitigation": "1. Only matching URLs will be redirected from Keycloak. Strict URL is enforced at Keycloak (No wildcard to be allowed)\n2. HTTPS is enforced at the Keycloak.\n3. PKCE and State validation is enforced using OIDC client at Active workspace.",
                   "modelType": "default",
                   "new": false,
-                  "number": 3,
+                  "number": 6,
                   "score": ""
                 }
               ]
@@ -1022,7 +1022,7 @@
                   "mitigation": "1. Enabled PKCE at AW using OIDC client package and using response_type=code \n2.  OIDC client package to take care of \"state\" validation\n3. Enfored HTTPS and valid redirect URLs only at the keycloak\n",
                   "modelType": "default",
                   "new": false,
-                  "number": 4,
+                  "number": 7,
                   "score": ""
                 }
               ],
@@ -1104,7 +1104,7 @@
                   "mitigation": "1. Client uses built in signinPopup() from OIDC-client-ts package which handles PKCE, CSRF\n2. Teamcenter and Authorization server (keycloak) are served in https://",
                   "modelType": "default",
                   "new": false,
-                  "number": 2,
+                  "number": 8,
                   "score": ""
                 }
               ],
@@ -1292,7 +1292,7 @@
                   "mitigation": "1. Using OIDC client API to validate if access token is expired. If expired, removeUser and ask to signin again\n2. CAXperts providing with short lived tokens (5mins) and refresh tokens\n3. Refresh token rotation is set to 0 in keycloak, enabling to discard refresh_token after single use.\n",
                   "modelType": "default",
                   "new": false,
-                  "number": 16,
+                  "number": 9,
                   "score": ""
                 },
                 {
@@ -1305,7 +1305,7 @@
                   "mitigation": "1. Using OIDC client to enable silentTokenRefresh\n2. Refresh token rotation is set to 0 in keycloak, enabling to discard refresh_token after single use.\n",
                   "modelType": "default",
                   "new": false,
-                  "number": 17,
+                  "number": 10,
                   "score": ""
                 }
               ]
