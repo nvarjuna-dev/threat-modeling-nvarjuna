@@ -11,7 +11,7 @@
     "diagrams": [
       {
         "id": 3,
-        "title": "New generic diagram",
+        "title": "CALM-CAXperts Integration Catalyst",
         "diagramType": "Generic",
         "placeholder": "New generic diagram description",
         "thumbnail": "./public/content/images/thumbnail.jpg",
@@ -1355,10 +1355,11 @@
               "hasOpenThreats": false
             }
           }
-        ]
+        ],
+        "description": "Catalyst solution for CALM CAXperts Integration"
       }
     ],
-    "diagramTop": 4,
+    "diagramTop": 5,
     "reviewer": "",
     "threatTop": 22
   }
