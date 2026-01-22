@@ -327,12 +327,12 @@
               "threats": [
                 {
                   "id": "a98474d5-038b-4fa6-88a4-213664d50702",
-                  "title": "Mailicious 3rd Party application gain access to CAXperts NPM package",
+                  "title": "Mailicious code to gain access to CAXperts NPM package",
                   "status": "Mitigated",
-                  "severity": "High",
+                  "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "A malicious third-party application embeds the @caxperts NPM package and uses it to appear as the legitimate viewer in Active Workspace.",
-                  "mitigation": "1. AW build to ensure npm security audits of third-party libraries like @caxperts.\n2. Implementing strict CSP policies at AW Gateway\n3. Using OIDC client which enables PKCE and State validation",
+                  "description": "An attacker injects malicious code within the NPM package used to integrate UDITH Viewer, leveraging the application's dependency on third-party packages.",
+                  "mitigation": "1. AW build to ensure npm security audits of third-party libraries like @caxperts.\n2. Enable this NPM package as part of AW Artifactory",
                   "modelType": "default",
                   "new": false,
                   "number": 8,
@@ -727,13 +727,6 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
