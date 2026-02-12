@@ -194,7 +194,7 @@
                 {
                   "id": "eb7fa5fe-396f-465c-9aee-7a81e1912473",
                   "title": "Access Token Theft and Replay",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Critical",
                   "type": "Spoofing",
                   "description": "A stolen access token is reused/replayed by an attacker to impersonate a legitimate client. (via XSS, malware, browser storage access etc..). This access token can be used to invoke any CAXperts API calls.\n\nSince access_token type is 'bearer' token, whoever holds token will get full control over APIs. \n",
@@ -1154,7 +1154,7 @@
                 "text": "Internet"
               }
             },
-            "visible": true,
+            "visible": false,
             "shape": "td-text-block",
             "zIndex": 11,
             "id": "56f50676-0f8e-4493-ac46-56afea21fad1",
